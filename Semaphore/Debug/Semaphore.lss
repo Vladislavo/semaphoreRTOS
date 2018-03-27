@@ -1,0 +1,944 @@
+
+Semaphore.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000002  00800100  00000576  0000060a  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000576  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          0000000a  00800102  00800102  0000060c  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  0000060c  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  0000063c  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000078  00000000  00000000  0000067c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   00000506  00000000  00000000  000006f4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000113  00000000  00000000  00000bfa  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00000611  00000000  00000000  00000d0d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  000001e0  00000000  00000000  00001320  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00006b3c  00000000  00000000  00001500  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00000350  00000000  00000000  0000803c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000068  00000000  00000000  0000838c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_macro  00000090  00000000  00000000  000083f4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	33 c0       	rjmp	.+102    	; 0x68 <__ctors_end>
+   2:	00 00       	nop
+   4:	4c c0       	rjmp	.+152    	; 0x9e <__bad_interrupt>
+   6:	00 00       	nop
+   8:	4a c0       	rjmp	.+148    	; 0x9e <__bad_interrupt>
+   a:	00 00       	nop
+   c:	d1 c0       	rjmp	.+418    	; 0x1b0 <__vector_3>
+   e:	00 00       	nop
+  10:	46 c0       	rjmp	.+140    	; 0x9e <__bad_interrupt>
+  12:	00 00       	nop
+  14:	1f c1       	rjmp	.+574    	; 0x254 <__vector_5>
+  16:	00 00       	nop
+  18:	42 c0       	rjmp	.+132    	; 0x9e <__bad_interrupt>
+  1a:	00 00       	nop
+  1c:	40 c0       	rjmp	.+128    	; 0x9e <__bad_interrupt>
+  1e:	00 00       	nop
+  20:	3e c0       	rjmp	.+124    	; 0x9e <__bad_interrupt>
+  22:	00 00       	nop
+  24:	3c c0       	rjmp	.+120    	; 0x9e <__bad_interrupt>
+  26:	00 00       	nop
+  28:	3a c0       	rjmp	.+116    	; 0x9e <__bad_interrupt>
+  2a:	00 00       	nop
+  2c:	5b c1       	rjmp	.+694    	; 0x2e4 <__vector_11>
+  2e:	00 00       	nop
+  30:	36 c0       	rjmp	.+108    	; 0x9e <__bad_interrupt>
+  32:	00 00       	nop
+  34:	34 c0       	rjmp	.+104    	; 0x9e <__bad_interrupt>
+  36:	00 00       	nop
+  38:	32 c0       	rjmp	.+100    	; 0x9e <__bad_interrupt>
+  3a:	00 00       	nop
+  3c:	30 c0       	rjmp	.+96     	; 0x9e <__bad_interrupt>
+  3e:	00 00       	nop
+  40:	2e c0       	rjmp	.+92     	; 0x9e <__bad_interrupt>
+  42:	00 00       	nop
+  44:	2c c0       	rjmp	.+88     	; 0x9e <__bad_interrupt>
+  46:	00 00       	nop
+  48:	2a c0       	rjmp	.+84     	; 0x9e <__bad_interrupt>
+  4a:	00 00       	nop
+  4c:	28 c0       	rjmp	.+80     	; 0x9e <__bad_interrupt>
+  4e:	00 00       	nop
+  50:	26 c0       	rjmp	.+76     	; 0x9e <__bad_interrupt>
+  52:	00 00       	nop
+  54:	25 c0       	rjmp	.+74     	; 0xa0 <__vector_21>
+  56:	00 00       	nop
+  58:	22 c0       	rjmp	.+68     	; 0x9e <__bad_interrupt>
+  5a:	00 00       	nop
+  5c:	20 c0       	rjmp	.+64     	; 0x9e <__bad_interrupt>
+  5e:	00 00       	nop
+  60:	1e c0       	rjmp	.+60     	; 0x9e <__bad_interrupt>
+  62:	00 00       	nop
+  64:	1c c0       	rjmp	.+56     	; 0x9e <__bad_interrupt>
+	...
+
+00000068 <__ctors_end>:
+  68:	11 24       	eor	r1, r1
+  6a:	1f be       	out	0x3f, r1	; 63
+  6c:	cf ef       	ldi	r28, 0xFF	; 255
+  6e:	d8 e0       	ldi	r29, 0x08	; 8
+  70:	de bf       	out	0x3e, r29	; 62
+  72:	cd bf       	out	0x3d, r28	; 61
+
+00000074 <__do_copy_data>:
+  74:	11 e0       	ldi	r17, 0x01	; 1
+  76:	a0 e0       	ldi	r26, 0x00	; 0
+  78:	b1 e0       	ldi	r27, 0x01	; 1
+  7a:	e6 e7       	ldi	r30, 0x76	; 118
+  7c:	f5 e0       	ldi	r31, 0x05	; 5
+  7e:	02 c0       	rjmp	.+4      	; 0x84 <__do_copy_data+0x10>
+  80:	05 90       	lpm	r0, Z+
+  82:	0d 92       	st	X+, r0
+  84:	a2 30       	cpi	r26, 0x02	; 2
+  86:	b1 07       	cpc	r27, r17
+  88:	d9 f7       	brne	.-10     	; 0x80 <__do_copy_data+0xc>
+
+0000008a <__do_clear_bss>:
+  8a:	21 e0       	ldi	r18, 0x01	; 1
+  8c:	a2 e0       	ldi	r26, 0x02	; 2
+  8e:	b1 e0       	ldi	r27, 0x01	; 1
+  90:	01 c0       	rjmp	.+2      	; 0x94 <.do_clear_bss_start>
+
+00000092 <.do_clear_bss_loop>:
+  92:	1d 92       	st	X+, r1
+
+00000094 <.do_clear_bss_start>:
+  94:	ac 30       	cpi	r26, 0x0C	; 12
+  96:	b2 07       	cpc	r27, r18
+  98:	e1 f7       	brne	.-8      	; 0x92 <.do_clear_bss_loop>
+  9a:	81 d0       	rcall	.+258    	; 0x19e <main>
+  9c:	6a c2       	rjmp	.+1236   	; 0x572 <_exit>
+
+0000009e <__bad_interrupt>:
+  9e:	b0 cf       	rjmp	.-160    	; 0x0 <__vectors>
+
+000000a0 <__vector_21>:
+	} else if(state == 5){ /* blinking green */
+		setGreenPad(2); /* blink */
+	}
+}
+/* ADC interrupts */
+ISR(ADC_vect){
+  a0:	1f 92       	push	r1
+  a2:	0f 92       	push	r0
+  a4:	0f b6       	in	r0, 0x3f	; 63
+  a6:	0f 92       	push	r0
+  a8:	11 24       	eor	r1, r1
+  aa:	2f 93       	push	r18
+  ac:	5f 93       	push	r21
+  ae:	6f 93       	push	r22
+  b0:	7f 93       	push	r23
+  b2:	8f 93       	push	r24
+  b4:	9f 93       	push	r25
+  b6:	af 93       	push	r26
+  b8:	bf 93       	push	r27
+	tp = 20*ADCH/255;
+  ba:	80 91 79 00 	lds	r24, 0x0079	; 0x800079 <__TEXT_REGION_LENGTH__+0x7e0079>
+  be:	24 e1       	ldi	r18, 0x14	; 20
+  c0:	28 9f       	mul	r18, r24
+  c2:	c0 01       	movw	r24, r0
+  c4:	11 24       	eor	r1, r1
+  c6:	6f ef       	ldi	r22, 0xFF	; 255
+  c8:	70 e0       	ldi	r23, 0x00	; 0
+  ca:	2c d2       	rcall	.+1112   	; 0x524 <__divmodhi4>
+	tc = 20 - tp;
+  cc:	26 1b       	sub	r18, r22
+  ce:	20 93 01 01 	sts	0x0101, r18	; 0x800101 <tc>
+	tp++; /* sum one for balancing. The real waiting time is still 20s */
+  d2:	6f 5f       	subi	r22, 0xFF	; 255
+  d4:	60 93 00 01 	sts	0x0100, r22	; 0x800100 <__data_start>
+}
+  d8:	bf 91       	pop	r27
+  da:	af 91       	pop	r26
+  dc:	9f 91       	pop	r25
+  de:	8f 91       	pop	r24
+  e0:	7f 91       	pop	r23
+  e2:	6f 91       	pop	r22
+  e4:	5f 91       	pop	r21
+  e6:	2f 91       	pop	r18
+  e8:	0f 90       	pop	r0
+  ea:	0f be       	out	0x3f, r0	; 63
+  ec:	0f 90       	pop	r0
+  ee:	1f 90       	pop	r1
+  f0:	18 95       	reti
+
+000000f2 <setGreenPad>:
+	setGreenCar(1);
+}
+
+/* routines to work with the lights */
+void setGreenPad(unsigned char data){
+	if(data == 1)
+  f2:	81 30       	cpi	r24, 0x01	; 1
+  f4:	11 f4       	brne	.+4      	; 0xfa <setGreenPad+0x8>
+		PORTB |= (1 << 2);
+  f6:	2a 9a       	sbi	0x05, 2	; 5
+  f8:	08 95       	ret
+	else if(data == 2)
+  fa:	82 30       	cpi	r24, 0x02	; 2
+  fc:	29 f4       	brne	.+10     	; 0x108 <setGreenPad+0x16>
+		PORTB ^= (1 << 2);
+  fe:	95 b1       	in	r25, 0x05	; 5
+ 100:	84 e0       	ldi	r24, 0x04	; 4
+ 102:	89 27       	eor	r24, r25
+ 104:	85 b9       	out	0x05, r24	; 5
+ 106:	08 95       	ret
+	else
+		PORTB &= ~(1 << 2);
+ 108:	2a 98       	cbi	0x05, 2	; 5
+ 10a:	08 95       	ret
+
+0000010c <setRedPed>:
+}
+void setRedPed(unsigned char data){
+	if(data)
+ 10c:	88 23       	and	r24, r24
+ 10e:	11 f0       	breq	.+4      	; 0x114 <setRedPed+0x8>
+		PORTB |= (1 << 1);
+ 110:	29 9a       	sbi	0x05, 1	; 5
+ 112:	08 95       	ret
+	else
+		PORTB &= ~(1 << 1);
+ 114:	29 98       	cbi	0x05, 1	; 5
+ 116:	08 95       	ret
+
+00000118 <setWaitingButton>:
+}
+void setWaitingButton(unsigned char data){
+	if(data == 1)
+ 118:	81 30       	cpi	r24, 0x01	; 1
+ 11a:	11 f4       	brne	.+4      	; 0x120 <setWaitingButton+0x8>
+		PORTB |= 0b00000001;
+ 11c:	28 9a       	sbi	0x05, 0	; 5
+ 11e:	08 95       	ret
+	else if(data == 2)
+ 120:	82 30       	cpi	r24, 0x02	; 2
+ 122:	29 f4       	brne	.+10     	; 0x12e <setWaitingButton+0x16>
+		PORTB ^= 0b00000001;
+ 124:	95 b1       	in	r25, 0x05	; 5
+ 126:	81 e0       	ldi	r24, 0x01	; 1
+ 128:	89 27       	eor	r24, r25
+ 12a:	85 b9       	out	0x05, r24	; 5
+ 12c:	08 95       	ret
+	else
+		PORTB &= 0xFE;
+ 12e:	28 98       	cbi	0x05, 0	; 5
+ 130:	08 95       	ret
+
+00000132 <setGreenCar>:
+}
+void setGreenCar(unsigned char data){
+	if(data == 1)
+ 132:	81 30       	cpi	r24, 0x01	; 1
+ 134:	11 f4       	brne	.+4      	; 0x13a <setGreenCar+0x8>
+		PORTD |= (1 << 7);
+ 136:	5f 9a       	sbi	0x0b, 7	; 11
+ 138:	08 95       	ret
+	else
+		PORTD &= ~(1 << 7);
+ 13a:	5f 98       	cbi	0x0b, 7	; 11
+ 13c:	08 95       	ret
+
+0000013e <init_setup>:
+	tp++; /* sum one for balancing. The real waiting time is still 20s */
+}
+
+void init_setup(void){
+	/* set up leds as output */
+	DDRB = 0x07;
+ 13e:	87 e0       	ldi	r24, 0x07	; 7
+ 140:	84 b9       	out	0x04, r24	; 4
+	DDRC = 0x18;
+ 142:	88 e1       	ldi	r24, 0x18	; 24
+ 144:	87 b9       	out	0x07, r24	; 7
+	DDRD = 0xB0;
+ 146:	80 eb       	ldi	r24, 0xB0	; 176
+ 148:	8a b9       	out	0x0a, r24	; 10
+	
+	/* set up external interrupts pg74 data sheet*/
+	PCMSK0 |= (1 << PCINT4);  // button C
+ 14a:	eb e6       	ldi	r30, 0x6B	; 107
+ 14c:	f0 e0       	ldi	r31, 0x00	; 0
+ 14e:	80 81       	ld	r24, Z
+ 150:	80 61       	ori	r24, 0x10	; 16
+ 152:	80 83       	st	Z, r24
+	PCMSK2 |= (1 << PCINT18); // button A
+ 154:	ed e6       	ldi	r30, 0x6D	; 109
+ 156:	f0 e0       	ldi	r31, 0x00	; 0
+ 158:	80 81       	ld	r24, Z
+ 15a:	84 60       	ori	r24, 0x04	; 4
+ 15c:	80 83       	st	Z, r24
+	/* enable interrupts assigned to the muxs 0 and 2 */
+	PCICR |= (1 << PCIE0) | (1 << PCIE2);
+ 15e:	e8 e6       	ldi	r30, 0x68	; 104
+ 160:	f0 e0       	ldi	r31, 0x00	; 0
+ 162:	80 81       	ld	r24, Z
+ 164:	85 60       	ori	r24, 0x05	; 5
+ 166:	80 83       	st	Z, r24
+	
+	/* set up timer interrupts */
+	/*   en timer interrupts | match A interrupt enable */
+	TIMSK1 |= 3;//(1 << TOIE1) | (1 << OCIE0A);
+ 168:	ef e6       	ldi	r30, 0x6F	; 111
+ 16a:	f0 e0       	ldi	r31, 0x00	; 0
+ 16c:	80 81       	ld	r24, Z
+ 16e:	83 60       	ori	r24, 0x03	; 3
+ 170:	80 83       	st	Z, r24
+	OCR1A = 15626; /* should happen 10 times to produce one second with /1024 prescalar */
+ 172:	8a e0       	ldi	r24, 0x0A	; 10
+ 174:	9d e3       	ldi	r25, 0x3D	; 61
+ 176:	90 93 89 00 	sts	0x0089, r25	; 0x800089 <__TEXT_REGION_LENGTH__+0x7e0089>
+ 17a:	80 93 88 00 	sts	0x0088, r24	; 0x800088 <__TEXT_REGION_LENGTH__+0x7e0088>
+	TCCR1B |= 0b00001101;
+ 17e:	e1 e8       	ldi	r30, 0x81	; 129
+ 180:	f0 e0       	ldi	r31, 0x00	; 0
+ 182:	80 81       	ld	r24, Z
+ 184:	8d 60       	ori	r24, 0x0D	; 13
+ 186:	80 83       	st	Z, r24
+	
+	/*   ref voltage src | left alignment | ADC5 */
+	ADMUX = (1 << REFS0) | (1 << ADLAR) | 5;
+ 188:	85 e6       	ldi	r24, 0x65	; 101
+ 18a:	80 93 7c 00 	sts	0x007C, r24	; 0x80007c <__TEXT_REGION_LENGTH__+0x7e007c>
+	/*	     enable ADC | 16 div factor | auto trigger | enable ADC interrupts | start first conversion */
+	ADCSRA = (1 << ADEN) | (1 << ADPS2) | (1 << ADATE) | (1 << ADIE) | (1 << ADSC);
+ 18e:	8c ee       	ldi	r24, 0xEC	; 236
+ 190:	80 93 7a 00 	sts	0x007A, r24	; 0x80007a <__TEXT_REGION_LENGTH__+0x7e007a>
+	
+	/* initial leds' state */
+	setRedPed(1);
+ 194:	81 e0       	ldi	r24, 0x01	; 1
+ 196:	ba df       	rcall	.-140    	; 0x10c <setRedPed>
+	setGreenCar(1);
+ 198:	81 e0       	ldi	r24, 0x01	; 1
+ 19a:	cb cf       	rjmp	.-106    	; 0x132 <setGreenCar>
+ 19c:	08 95       	ret
+
+0000019e <main>:
+unsigned char pbut_on = 0;
+
+
+int main (void) {
+	/* initialization routine */
+	init_setup();
+ 19e:	cf df       	rcall	.-98     	; 0x13e <init_setup>
+	
+	/* enable interrupts */
+	sei();
+ 1a0:	78 94       	sei
+	
+	while(1);
+ 1a2:	ff cf       	rjmp	.-2      	; 0x1a2 <main+0x4>
+
+000001a4 <setYellowCar>:
+		PORTD |= (1 << 7);
+	else
+		PORTD &= ~(1 << 7);
+}
+void setYellowCar(unsigned char data){
+	if(data)
+ 1a4:	88 23       	and	r24, r24
+ 1a6:	11 f0       	breq	.+4      	; 0x1ac <setYellowCar+0x8>
+		PORTD |= (1 << 5);
+ 1a8:	5d 9a       	sbi	0x0b, 5	; 11
+ 1aa:	08 95       	ret
+	else
+		PORTD &= ~(1 << 5);
+ 1ac:	5d 98       	cbi	0x0b, 5	; 11
+ 1ae:	08 95       	ret
+
+000001b0 <__vector_3>:
+	
+	while(1);
+}
+
+/* button C interrupt (waiting) */
+ISR(PCINT0_vect){
+ 1b0:	1f 92       	push	r1
+ 1b2:	0f 92       	push	r0
+ 1b4:	0f b6       	in	r0, 0x3f	; 63
+ 1b6:	0f 92       	push	r0
+ 1b8:	11 24       	eor	r1, r1
+ 1ba:	2f 93       	push	r18
+ 1bc:	3f 93       	push	r19
+ 1be:	4f 93       	push	r20
+ 1c0:	5f 93       	push	r21
+ 1c2:	6f 93       	push	r22
+ 1c4:	7f 93       	push	r23
+ 1c6:	8f 93       	push	r24
+ 1c8:	9f 93       	push	r25
+ 1ca:	af 93       	push	r26
+ 1cc:	bf 93       	push	r27
+ 1ce:	ef 93       	push	r30
+ 1d0:	ff 93       	push	r31
+	if(button_on ^= 1){
+ 1d2:	90 91 03 01 	lds	r25, 0x0103	; 0x800103 <button_on>
+ 1d6:	81 e0       	ldi	r24, 0x01	; 1
+ 1d8:	89 27       	eor	r24, r25
+ 1da:	80 93 03 01 	sts	0x0103, r24	; 0x800103 <button_on>
+ 1de:	88 23       	and	r24, r24
+ 1e0:	11 f1       	breq	.+68     	; 0x226 <__vector_3+0x76>
+		if(pbut_on){ /* blinking pedestrian button */
+ 1e2:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <__data_end>
+ 1e6:	88 23       	and	r24, r24
+ 1e8:	21 f0       	breq	.+8      	; 0x1f2 <__vector_3+0x42>
+			pbut_on = 2;
+ 1ea:	82 e0       	ldi	r24, 0x02	; 2
+ 1ec:	80 93 02 01 	sts	0x0102, r24	; 0x800102 <__data_end>
+ 1f0:	1a c0       	rjmp	.+52     	; 0x226 <__vector_3+0x76>
+		} else if(wait_tc >= tc){
+ 1f2:	90 91 0a 01 	lds	r25, 0x010A	; 0x80010a <wait_tc>
+ 1f6:	80 91 01 01 	lds	r24, 0x0101	; 0x800101 <tc>
+ 1fa:	98 17       	cp	r25, r24
+ 1fc:	60 f0       	brcs	.+24     	; 0x216 <__vector_3+0x66>
+			setWaitingButton(1);
+ 1fe:	81 e0       	ldi	r24, 0x01	; 1
+ 200:	8b df       	rcall	.-234    	; 0x118 <setWaitingButton>
+			setGreenCar(0);
+ 202:	80 e0       	ldi	r24, 0x00	; 0
+ 204:	96 df       	rcall	.-212    	; 0x132 <setGreenCar>
+			setYellowCar(1);
+ 206:	81 e0       	ldi	r24, 0x01	; 1
+ 208:	cd df       	rcall	.-102    	; 0x1a4 <setYellowCar>
+			pbut_on = 1;
+ 20a:	81 e0       	ldi	r24, 0x01	; 1
+ 20c:	80 93 02 01 	sts	0x0102, r24	; 0x800102 <__data_end>
+			state = 1; /* timer changes according to states */
+ 210:	80 93 0b 01 	sts	0x010B, r24	; 0x80010b <state>
+ 214:	08 c0       	rjmp	.+16     	; 0x226 <__vector_3+0x76>
+		} else if(wait_tc < tc) {
+			setWaitingButton(1);
+ 216:	81 e0       	ldi	r24, 0x01	; 1
+ 218:	7f df       	rcall	.-258    	; 0x118 <setWaitingButton>
+			pbut_on = 1;
+ 21a:	81 e0       	ldi	r24, 0x01	; 1
+ 21c:	80 93 02 01 	sts	0x0102, r24	; 0x800102 <__data_end>
+			state = 2;
+ 220:	82 e0       	ldi	r24, 0x02	; 2
+ 222:	80 93 0b 01 	sts	0x010B, r24	; 0x80010b <state>
+		}
+	}
+}
+ 226:	ff 91       	pop	r31
+ 228:	ef 91       	pop	r30
+ 22a:	bf 91       	pop	r27
+ 22c:	af 91       	pop	r26
+ 22e:	9f 91       	pop	r25
+ 230:	8f 91       	pop	r24
+ 232:	7f 91       	pop	r23
+ 234:	6f 91       	pop	r22
+ 236:	5f 91       	pop	r21
+ 238:	4f 91       	pop	r20
+ 23a:	3f 91       	pop	r19
+ 23c:	2f 91       	pop	r18
+ 23e:	0f 90       	pop	r0
+ 240:	0f be       	out	0x3f, r0	; 63
+ 242:	0f 90       	pop	r0
+ 244:	1f 90       	pop	r1
+ 246:	18 95       	reti
+
+00000248 <setRedCar>:
+		PORTD |= (1 << 5);
+	else
+		PORTD &= ~(1 << 5);
+}
+void setRedCar(unsigned char data){
+	if(data)
+ 248:	88 23       	and	r24, r24
+ 24a:	11 f0       	breq	.+4      	; 0x250 <setRedCar+0x8>
+		PORTD |= (1 << 4);
+ 24c:	5c 9a       	sbi	0x0b, 4	; 11
+ 24e:	08 95       	ret
+	else
+		PORTD &= ~(1 << 4);
+ 250:	5c 98       	cbi	0x0b, 4	; 11
+ 252:	08 95       	ret
+
+00000254 <__vector_5>:
+			state = 2;
+		}
+	}
+}
+/* button A interrupt (reset) */
+ISR(PCINT2_vect){
+ 254:	1f 92       	push	r1
+ 256:	0f 92       	push	r0
+ 258:	0f b6       	in	r0, 0x3f	; 63
+ 25a:	0f 92       	push	r0
+ 25c:	11 24       	eor	r1, r1
+ 25e:	2f 93       	push	r18
+ 260:	3f 93       	push	r19
+ 262:	4f 93       	push	r20
+ 264:	5f 93       	push	r21
+ 266:	6f 93       	push	r22
+ 268:	7f 93       	push	r23
+ 26a:	8f 93       	push	r24
+ 26c:	9f 93       	push	r25
+ 26e:	af 93       	push	r26
+ 270:	bf 93       	push	r27
+ 272:	ef 93       	push	r30
+ 274:	ff 93       	push	r31
+	if(button_on ^= 1){
+ 276:	90 91 03 01 	lds	r25, 0x0103	; 0x800103 <button_on>
+ 27a:	81 e0       	ldi	r24, 0x01	; 1
+ 27c:	89 27       	eor	r24, r25
+ 27e:	80 93 03 01 	sts	0x0103, r24	; 0x800103 <button_on>
+ 282:	88 23       	and	r24, r24
+ 284:	f1 f0       	breq	.+60     	; 0x2c2 <__vector_5+0x6e>
+		/* initial semaphore's state */
+		setGreenCar(1);
+ 286:	81 e0       	ldi	r24, 0x01	; 1
+ 288:	54 df       	rcall	.-344    	; 0x132 <setGreenCar>
+		setYellowCar(0);
+ 28a:	80 e0       	ldi	r24, 0x00	; 0
+ 28c:	8b df       	rcall	.-234    	; 0x1a4 <setYellowCar>
+		setRedCar(0);
+ 28e:	80 e0       	ldi	r24, 0x00	; 0
+ 290:	db df       	rcall	.-74     	; 0x248 <setRedCar>
+		setWaitingButton(0);
+ 292:	80 e0       	ldi	r24, 0x00	; 0
+ 294:	41 df       	rcall	.-382    	; 0x118 <setWaitingButton>
+		setRedPed(1);
+ 296:	81 e0       	ldi	r24, 0x01	; 1
+ 298:	39 df       	rcall	.-398    	; 0x10c <setRedPed>
+		setGreenPad(0);
+ 29a:	80 e0       	ldi	r24, 0x00	; 0
+ 29c:	2a df       	rcall	.-428    	; 0xf2 <setGreenPad>
+
+		/* times reset */
+		wait_tc = 0;
+ 29e:	10 92 0a 01 	sts	0x010A, r1	; 0x80010a <wait_tc>
+		wait_tp = 0;
+ 2a2:	10 92 09 01 	sts	0x0109, r1	; 0x800109 <wait_tp>
+		wait_green = 0;
+ 2a6:	10 92 08 01 	sts	0x0108, r1	; 0x800108 <wait_green>
+		nobody_passes = 0;
+ 2aa:	10 92 07 01 	sts	0x0107, r1	; 0x800107 <nobody_passes>
+		blinking_pedestrian = 0;
+ 2ae:	10 92 06 01 	sts	0x0106, r1	; 0x800106 <blinking_pedestrian>
+		blinking_wait_ped_but = 0;
+ 2b2:	10 92 05 01 	sts	0x0105, r1	; 0x800105 <blinking_wait_ped_but>
+		onesec = 0;
+ 2b6:	10 92 04 01 	sts	0x0104, r1	; 0x800104 <onesec>
+		pbut_on = 0;
+ 2ba:	10 92 02 01 	sts	0x0102, r1	; 0x800102 <__data_end>
+
+		state = 0; /* to initial state */
+ 2be:	10 92 0b 01 	sts	0x010B, r1	; 0x80010b <state>
+	}
+}
+ 2c2:	ff 91       	pop	r31
+ 2c4:	ef 91       	pop	r30
+ 2c6:	bf 91       	pop	r27
+ 2c8:	af 91       	pop	r26
+ 2ca:	9f 91       	pop	r25
+ 2cc:	8f 91       	pop	r24
+ 2ce:	7f 91       	pop	r23
+ 2d0:	6f 91       	pop	r22
+ 2d2:	5f 91       	pop	r21
+ 2d4:	4f 91       	pop	r20
+ 2d6:	3f 91       	pop	r19
+ 2d8:	2f 91       	pop	r18
+ 2da:	0f 90       	pop	r0
+ 2dc:	0f be       	out	0x3f, r0	; 63
+ 2de:	0f 90       	pop	r0
+ 2e0:	1f 90       	pop	r1
+ 2e2:	18 95       	reti
+
+000002e4 <__vector_11>:
+/* timer interrupt */
+ISR(TIMER1_COMPA_vect){
+ 2e4:	1f 92       	push	r1
+ 2e6:	0f 92       	push	r0
+ 2e8:	0f b6       	in	r0, 0x3f	; 63
+ 2ea:	0f 92       	push	r0
+ 2ec:	11 24       	eor	r1, r1
+ 2ee:	2f 93       	push	r18
+ 2f0:	3f 93       	push	r19
+ 2f2:	4f 93       	push	r20
+ 2f4:	5f 93       	push	r21
+ 2f6:	6f 93       	push	r22
+ 2f8:	7f 93       	push	r23
+ 2fa:	8f 93       	push	r24
+ 2fc:	9f 93       	push	r25
+ 2fe:	af 93       	push	r26
+ 300:	bf 93       	push	r27
+ 302:	ef 93       	push	r30
+ 304:	ff 93       	push	r31
+	if(!((onesec++) % 10)){
+ 306:	20 91 04 01 	lds	r18, 0x0104	; 0x800104 <onesec>
+ 30a:	81 e0       	ldi	r24, 0x01	; 1
+ 30c:	82 0f       	add	r24, r18
+ 30e:	80 93 04 01 	sts	0x0104, r24	; 0x800104 <onesec>
+ 312:	8d ec       	ldi	r24, 0xCD	; 205
+ 314:	28 9f       	mul	r18, r24
+ 316:	81 2d       	mov	r24, r1
+ 318:	11 24       	eor	r1, r1
+ 31a:	86 95       	lsr	r24
+ 31c:	86 95       	lsr	r24
+ 31e:	86 95       	lsr	r24
+ 320:	88 0f       	add	r24, r24
+ 322:	98 2f       	mov	r25, r24
+ 324:	99 0f       	add	r25, r25
+ 326:	99 0f       	add	r25, r25
+ 328:	89 0f       	add	r24, r25
+ 32a:	28 13       	cpse	r18, r24
+ 32c:	a5 c0       	rjmp	.+330    	; 0x478 <__FUSE_REGION_LENGTH__+0x78>
+		if(state == 0){ /* waiting for pedestrian */
+ 32e:	80 91 0b 01 	lds	r24, 0x010B	; 0x80010b <state>
+ 332:	81 11       	cpse	r24, r1
+ 334:	06 c0       	rjmp	.+12     	; 0x342 <__vector_11+0x5e>
+			wait_tc++;
+ 336:	80 91 0a 01 	lds	r24, 0x010A	; 0x80010a <wait_tc>
+ 33a:	8f 5f       	subi	r24, 0xFF	; 255
+ 33c:	80 93 0a 01 	sts	0x010A, r24	; 0x80010a <wait_tc>
+ 340:	99 c0       	rjmp	.+306    	; 0x474 <__FUSE_REGION_LENGTH__+0x74>
+		} else if(state == 1){ /* pedestrian pushed the waiting button and wait_tc >= tc */
+ 342:	81 30       	cpi	r24, 0x01	; 1
+ 344:	b9 f4       	brne	.+46     	; 0x374 <__vector_11+0x90>
+			if(!((++wait_green) % 4)){
+ 346:	80 91 08 01 	lds	r24, 0x0108	; 0x800108 <wait_green>
+ 34a:	8f 5f       	subi	r24, 0xFF	; 255
+ 34c:	80 93 08 01 	sts	0x0108, r24	; 0x800108 <wait_green>
+ 350:	83 70       	andi	r24, 0x03	; 3
+ 352:	51 f4       	brne	.+20     	; 0x368 <__vector_11+0x84>
+				setYellowCar(0);
+ 354:	27 df       	rcall	.-434    	; 0x1a4 <setYellowCar>
+				setRedCar(1);
+ 356:	81 e0       	ldi	r24, 0x01	; 1
+ 358:	77 df       	rcall	.-274    	; 0x248 <setRedCar>
+				setGreenCar(0);
+ 35a:	80 e0       	ldi	r24, 0x00	; 0
+ 35c:	ea de       	rcall	.-556    	; 0x132 <setGreenCar>
+				wait_green = 0;
+ 35e:	10 92 08 01 	sts	0x0108, r1	; 0x800108 <wait_green>
+				state = 3;
+ 362:	83 e0       	ldi	r24, 0x03	; 3
+ 364:	80 93 0b 01 	sts	0x010B, r24	; 0x80010b <state>
+			}
+			wait_tc++;
+ 368:	80 91 0a 01 	lds	r24, 0x010A	; 0x80010a <wait_tc>
+ 36c:	8f 5f       	subi	r24, 0xFF	; 255
+ 36e:	80 93 0a 01 	sts	0x010A, r24	; 0x80010a <wait_tc>
+ 372:	80 c0       	rjmp	.+256    	; 0x474 <__FUSE_REGION_LENGTH__+0x74>
+		} else if(state == 2){ /* pedestrian pushed the waiting button and wait_tc < tc */
+ 374:	82 30       	cpi	r24, 0x02	; 2
+ 376:	f1 f4       	brne	.+60     	; 0x3b4 <__vector_11+0xd0>
+			if(wait_tc >= tc){
+ 378:	80 91 0a 01 	lds	r24, 0x010A	; 0x80010a <wait_tc>
+ 37c:	20 91 01 01 	lds	r18, 0x0101	; 0x800101 <tc>
+ 380:	82 17       	cp	r24, r18
+ 382:	40 f0       	brcs	.+16     	; 0x394 <__vector_11+0xb0>
+				setYellowCar(0);
+ 384:	80 e0       	ldi	r24, 0x00	; 0
+ 386:	0e df       	rcall	.-484    	; 0x1a4 <setYellowCar>
+				setRedCar(1);
+ 388:	81 e0       	ldi	r24, 0x01	; 1
+ 38a:	5e df       	rcall	.-324    	; 0x248 <setRedCar>
+				state = 3;
+ 38c:	83 e0       	ldi	r24, 0x03	; 3
+ 38e:	80 93 0b 01 	sts	0x010B, r24	; 0x80010b <state>
+ 392:	0a c0       	rjmp	.+20     	; 0x3a8 <__vector_11+0xc4>
+			} else if(wait_tc + 3 >= tc){
+ 394:	90 e0       	ldi	r25, 0x00	; 0
+ 396:	03 96       	adiw	r24, 0x03	; 3
+ 398:	30 e0       	ldi	r19, 0x00	; 0
+ 39a:	82 17       	cp	r24, r18
+ 39c:	93 07       	cpc	r25, r19
+ 39e:	24 f0       	brlt	.+8      	; 0x3a8 <__vector_11+0xc4>
+				setYellowCar(1);
+ 3a0:	81 e0       	ldi	r24, 0x01	; 1
+ 3a2:	00 df       	rcall	.-512    	; 0x1a4 <setYellowCar>
+				setGreenCar(0);
+ 3a4:	80 e0       	ldi	r24, 0x00	; 0
+ 3a6:	c5 de       	rcall	.-630    	; 0x132 <setGreenCar>
+			}
+			wait_tc++;
+ 3a8:	80 91 0a 01 	lds	r24, 0x010A	; 0x80010a <wait_tc>
+ 3ac:	8f 5f       	subi	r24, 0xFF	; 255
+ 3ae:	80 93 0a 01 	sts	0x010A, r24	; 0x80010a <wait_tc>
+ 3b2:	60 c0       	rjmp	.+192    	; 0x474 <__FUSE_REGION_LENGTH__+0x74>
+		} else if(state == 3){ /* nobody can pass */
+ 3b4:	83 30       	cpi	r24, 0x03	; 3
+ 3b6:	09 f5       	brne	.+66     	; 0x3fa <__vector_11+0x116>
+			if(!((++nobody_passes) % 3)){
+ 3b8:	90 91 07 01 	lds	r25, 0x0107	; 0x800107 <nobody_passes>
+ 3bc:	9f 5f       	subi	r25, 0xFF	; 255
+ 3be:	90 93 07 01 	sts	0x0107, r25	; 0x800107 <nobody_passes>
+ 3c2:	8b ea       	ldi	r24, 0xAB	; 171
+ 3c4:	98 9f       	mul	r25, r24
+ 3c6:	81 2d       	mov	r24, r1
+ 3c8:	11 24       	eor	r1, r1
+ 3ca:	86 95       	lsr	r24
+ 3cc:	28 2f       	mov	r18, r24
+ 3ce:	22 0f       	add	r18, r18
+ 3d0:	82 0f       	add	r24, r18
+ 3d2:	98 13       	cpse	r25, r24
+ 3d4:	4f c0       	rjmp	.+158    	; 0x474 <__FUSE_REGION_LENGTH__+0x74>
+				setWaitingButton(0);
+ 3d6:	80 e0       	ldi	r24, 0x00	; 0
+ 3d8:	9f de       	rcall	.-706    	; 0x118 <setWaitingButton>
+				setRedPed(0);
+ 3da:	80 e0       	ldi	r24, 0x00	; 0
+ 3dc:	97 de       	rcall	.-722    	; 0x10c <setRedPed>
+				setGreenPad(1);
+ 3de:	81 e0       	ldi	r24, 0x01	; 1
+ 3e0:	88 de       	rcall	.-752    	; 0xf2 <setGreenPad>
+				wait_tc = 0;
+ 3e2:	10 92 0a 01 	sts	0x010A, r1	; 0x80010a <wait_tc>
+				pbut_on = 0;
+ 3e6:	10 92 02 01 	sts	0x0102, r1	; 0x800102 <__data_end>
+				nobody_passes = 0;
+ 3ea:	10 92 07 01 	sts	0x0107, r1	; 0x800107 <nobody_passes>
+				blinking_wait_ped_but = 0;
+ 3ee:	10 92 05 01 	sts	0x0105, r1	; 0x800105 <blinking_wait_ped_but>
+				state = 4;
+ 3f2:	84 e0       	ldi	r24, 0x04	; 4
+ 3f4:	80 93 0b 01 	sts	0x010B, r24	; 0x80010b <state>
+ 3f8:	3d c0       	rjmp	.+122    	; 0x474 <__FUSE_REGION_LENGTH__+0x74>
+			}
+		} else if(state == 4){ /* pedestrians pass */
+ 3fa:	84 30       	cpi	r24, 0x04	; 4
+ 3fc:	81 f4       	brne	.+32     	; 0x41e <__FUSE_REGION_LENGTH__+0x1e>
+			if(!((++wait_tp) % tp)){
+ 3fe:	80 91 09 01 	lds	r24, 0x0109	; 0x800109 <wait_tp>
+ 402:	8f 5f       	subi	r24, 0xFF	; 255
+ 404:	80 93 09 01 	sts	0x0109, r24	; 0x800109 <wait_tp>
+ 408:	60 91 00 01 	lds	r22, 0x0100	; 0x800100 <__data_start>
+ 40c:	7f d0       	rcall	.+254    	; 0x50c <__udivmodqi4>
+ 40e:	91 11       	cpse	r25, r1
+ 410:	31 c0       	rjmp	.+98     	; 0x474 <__FUSE_REGION_LENGTH__+0x74>
+				wait_tp = 0;
+ 412:	10 92 09 01 	sts	0x0109, r1	; 0x800109 <wait_tp>
+				state = 5;
+ 416:	85 e0       	ldi	r24, 0x05	; 5
+ 418:	80 93 0b 01 	sts	0x010B, r24	; 0x80010b <state>
+ 41c:	2b c0       	rjmp	.+86     	; 0x474 <__FUSE_REGION_LENGTH__+0x74>
+			}
+		} else if(state == 5){ /* blinking green */
+ 41e:	85 30       	cpi	r24, 0x05	; 5
+ 420:	81 f4       	brne	.+32     	; 0x442 <__FUSE_REGION_LENGTH__+0x42>
+			if(!((++wait_green) % 4)){
+ 422:	80 91 08 01 	lds	r24, 0x0108	; 0x800108 <wait_green>
+ 426:	8f 5f       	subi	r24, 0xFF	; 255
+ 428:	80 93 08 01 	sts	0x0108, r24	; 0x800108 <wait_green>
+ 42c:	83 70       	andi	r24, 0x03	; 3
+ 42e:	11 f5       	brne	.+68     	; 0x474 <__FUSE_REGION_LENGTH__+0x74>
+				setGreenPad(0);
+ 430:	60 de       	rcall	.-832    	; 0xf2 <setGreenPad>
+				setRedPed(1);
+ 432:	81 e0       	ldi	r24, 0x01	; 1
+ 434:	6b de       	rcall	.-810    	; 0x10c <setRedPed>
+				wait_green = 0;
+ 436:	10 92 08 01 	sts	0x0108, r1	; 0x800108 <wait_green>
+				state = 6;
+ 43a:	86 e0       	ldi	r24, 0x06	; 6
+ 43c:	80 93 0b 01 	sts	0x010B, r24	; 0x80010b <state>
+ 440:	19 c0       	rjmp	.+50     	; 0x474 <__FUSE_REGION_LENGTH__+0x74>
+			}
+		} else if(state == 6){
+ 442:	86 30       	cpi	r24, 0x06	; 6
+ 444:	b9 f4       	brne	.+46     	; 0x474 <__FUSE_REGION_LENGTH__+0x74>
+			if(!((++nobody_passes) % 3)){
+ 446:	90 91 07 01 	lds	r25, 0x0107	; 0x800107 <nobody_passes>
+ 44a:	9f 5f       	subi	r25, 0xFF	; 255
+ 44c:	90 93 07 01 	sts	0x0107, r25	; 0x800107 <nobody_passes>
+ 450:	8b ea       	ldi	r24, 0xAB	; 171
+ 452:	98 9f       	mul	r25, r24
+ 454:	81 2d       	mov	r24, r1
+ 456:	11 24       	eor	r1, r1
+ 458:	86 95       	lsr	r24
+ 45a:	28 2f       	mov	r18, r24
+ 45c:	22 0f       	add	r18, r18
+ 45e:	82 0f       	add	r24, r18
+ 460:	98 13       	cpse	r25, r24
+ 462:	08 c0       	rjmp	.+16     	; 0x474 <__FUSE_REGION_LENGTH__+0x74>
+				setRedCar(0);
+ 464:	80 e0       	ldi	r24, 0x00	; 0
+ 466:	f0 de       	rcall	.-544    	; 0x248 <setRedCar>
+				setGreenCar(1);
+ 468:	81 e0       	ldi	r24, 0x01	; 1
+ 46a:	63 de       	rcall	.-826    	; 0x132 <setGreenCar>
+				nobody_passes = 0;
+ 46c:	10 92 07 01 	sts	0x0107, r1	; 0x800107 <nobody_passes>
+				state = 0;
+ 470:	10 92 0b 01 	sts	0x010B, r1	; 0x80010b <state>
+			}
+		}
+		onesec = 0;
+ 474:	10 92 04 01 	sts	0x0104, r1	; 0x800104 <onesec>
+	} 
+	/* blinking goes in terms of external timer */
+	if(state == 1 && pbut_on > 1){
+ 478:	80 91 0b 01 	lds	r24, 0x010B	; 0x80010b <state>
+ 47c:	81 30       	cpi	r24, 0x01	; 1
+ 47e:	79 f4       	brne	.+30     	; 0x49e <__FUSE_REGION_LENGTH__+0x9e>
+ 480:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <__data_end>
+ 484:	82 30       	cpi	r24, 0x02	; 2
+ 486:	88 f1       	brcs	.+98     	; 0x4ea <__FUSE_REGION_LENGTH__+0xea>
+		if(blinking_wait_ped_but++ < 4){
+ 488:	80 91 05 01 	lds	r24, 0x0105	; 0x800105 <blinking_wait_ped_but>
+ 48c:	91 e0       	ldi	r25, 0x01	; 1
+ 48e:	98 0f       	add	r25, r24
+ 490:	90 93 05 01 	sts	0x0105, r25	; 0x800105 <blinking_wait_ped_but>
+ 494:	84 30       	cpi	r24, 0x04	; 4
+ 496:	48 f5       	brcc	.+82     	; 0x4ea <__FUSE_REGION_LENGTH__+0xea>
+			setWaitingButton(2); /* blink */
+ 498:	82 e0       	ldi	r24, 0x02	; 2
+ 49a:	3e de       	rcall	.-900    	; 0x118 <setWaitingButton>
+ 49c:	26 c0       	rjmp	.+76     	; 0x4ea <__FUSE_REGION_LENGTH__+0xea>
+		}
+	} else if(state == 2 && pbut_on > 1){
+ 49e:	82 30       	cpi	r24, 0x02	; 2
+ 4a0:	79 f4       	brne	.+30     	; 0x4c0 <__FUSE_REGION_LENGTH__+0xc0>
+ 4a2:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <__data_end>
+ 4a6:	82 30       	cpi	r24, 0x02	; 2
+ 4a8:	00 f1       	brcs	.+64     	; 0x4ea <__FUSE_REGION_LENGTH__+0xea>
+		if(blinking_wait_ped_but++ < 4){
+ 4aa:	80 91 05 01 	lds	r24, 0x0105	; 0x800105 <blinking_wait_ped_but>
+ 4ae:	91 e0       	ldi	r25, 0x01	; 1
+ 4b0:	98 0f       	add	r25, r24
+ 4b2:	90 93 05 01 	sts	0x0105, r25	; 0x800105 <blinking_wait_ped_but>
+ 4b6:	84 30       	cpi	r24, 0x04	; 4
+ 4b8:	c0 f4       	brcc	.+48     	; 0x4ea <__FUSE_REGION_LENGTH__+0xea>
+			setWaitingButton(2); /* blink */
+ 4ba:	82 e0       	ldi	r24, 0x02	; 2
+ 4bc:	2d de       	rcall	.-934    	; 0x118 <setWaitingButton>
+ 4be:	15 c0       	rjmp	.+42     	; 0x4ea <__FUSE_REGION_LENGTH__+0xea>
+		}
+	} else if(state == 3 && pbut_on > 1){
+ 4c0:	83 30       	cpi	r24, 0x03	; 3
+ 4c2:	79 f4       	brne	.+30     	; 0x4e2 <__FUSE_REGION_LENGTH__+0xe2>
+ 4c4:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <__data_end>
+ 4c8:	82 30       	cpi	r24, 0x02	; 2
+ 4ca:	78 f0       	brcs	.+30     	; 0x4ea <__FUSE_REGION_LENGTH__+0xea>
+		if(blinking_wait_ped_but++ < 4){
+ 4cc:	80 91 05 01 	lds	r24, 0x0105	; 0x800105 <blinking_wait_ped_but>
+ 4d0:	91 e0       	ldi	r25, 0x01	; 1
+ 4d2:	98 0f       	add	r25, r24
+ 4d4:	90 93 05 01 	sts	0x0105, r25	; 0x800105 <blinking_wait_ped_but>
+ 4d8:	84 30       	cpi	r24, 0x04	; 4
+ 4da:	38 f4       	brcc	.+14     	; 0x4ea <__FUSE_REGION_LENGTH__+0xea>
+			setWaitingButton(2); /* blink */
+ 4dc:	82 e0       	ldi	r24, 0x02	; 2
+ 4de:	1c de       	rcall	.-968    	; 0x118 <setWaitingButton>
+ 4e0:	04 c0       	rjmp	.+8      	; 0x4ea <__FUSE_REGION_LENGTH__+0xea>
+		}
+	} else if(state == 5){ /* blinking green */
+ 4e2:	85 30       	cpi	r24, 0x05	; 5
+ 4e4:	11 f4       	brne	.+4      	; 0x4ea <__FUSE_REGION_LENGTH__+0xea>
+		setGreenPad(2); /* blink */
+ 4e6:	82 e0       	ldi	r24, 0x02	; 2
+ 4e8:	04 de       	rcall	.-1016   	; 0xf2 <setGreenPad>
+	}
+}
+ 4ea:	ff 91       	pop	r31
+ 4ec:	ef 91       	pop	r30
+ 4ee:	bf 91       	pop	r27
+ 4f0:	af 91       	pop	r26
+ 4f2:	9f 91       	pop	r25
+ 4f4:	8f 91       	pop	r24
+ 4f6:	7f 91       	pop	r23
+ 4f8:	6f 91       	pop	r22
+ 4fa:	5f 91       	pop	r21
+ 4fc:	4f 91       	pop	r20
+ 4fe:	3f 91       	pop	r19
+ 500:	2f 91       	pop	r18
+ 502:	0f 90       	pop	r0
+ 504:	0f be       	out	0x3f, r0	; 63
+ 506:	0f 90       	pop	r0
+ 508:	1f 90       	pop	r1
+ 50a:	18 95       	reti
+
+0000050c <__udivmodqi4>:
+ 50c:	99 1b       	sub	r25, r25
+ 50e:	79 e0       	ldi	r23, 0x09	; 9
+ 510:	04 c0       	rjmp	.+8      	; 0x51a <__udivmodqi4_ep>
+
+00000512 <__udivmodqi4_loop>:
+ 512:	99 1f       	adc	r25, r25
+ 514:	96 17       	cp	r25, r22
+ 516:	08 f0       	brcs	.+2      	; 0x51a <__udivmodqi4_ep>
+ 518:	96 1b       	sub	r25, r22
+
+0000051a <__udivmodqi4_ep>:
+ 51a:	88 1f       	adc	r24, r24
+ 51c:	7a 95       	dec	r23
+ 51e:	c9 f7       	brne	.-14     	; 0x512 <__udivmodqi4_loop>
+ 520:	80 95       	com	r24
+ 522:	08 95       	ret
+
+00000524 <__divmodhi4>:
+ 524:	97 fb       	bst	r25, 7
+ 526:	07 2e       	mov	r0, r23
+ 528:	16 f4       	brtc	.+4      	; 0x52e <__divmodhi4+0xa>
+ 52a:	00 94       	com	r0
+ 52c:	06 d0       	rcall	.+12     	; 0x53a <__divmodhi4_neg1>
+ 52e:	77 fd       	sbrc	r23, 7
+ 530:	08 d0       	rcall	.+16     	; 0x542 <__divmodhi4_neg2>
+ 532:	0b d0       	rcall	.+22     	; 0x54a <__udivmodhi4>
+ 534:	07 fc       	sbrc	r0, 7
+ 536:	05 d0       	rcall	.+10     	; 0x542 <__divmodhi4_neg2>
+ 538:	3e f4       	brtc	.+14     	; 0x548 <__divmodhi4_exit>
+
+0000053a <__divmodhi4_neg1>:
+ 53a:	90 95       	com	r25
+ 53c:	81 95       	neg	r24
+ 53e:	9f 4f       	sbci	r25, 0xFF	; 255
+ 540:	08 95       	ret
+
+00000542 <__divmodhi4_neg2>:
+ 542:	70 95       	com	r23
+ 544:	61 95       	neg	r22
+ 546:	7f 4f       	sbci	r23, 0xFF	; 255
+
+00000548 <__divmodhi4_exit>:
+ 548:	08 95       	ret
+
+0000054a <__udivmodhi4>:
+ 54a:	aa 1b       	sub	r26, r26
+ 54c:	bb 1b       	sub	r27, r27
+ 54e:	51 e1       	ldi	r21, 0x11	; 17
+ 550:	07 c0       	rjmp	.+14     	; 0x560 <__udivmodhi4_ep>
+
+00000552 <__udivmodhi4_loop>:
+ 552:	aa 1f       	adc	r26, r26
+ 554:	bb 1f       	adc	r27, r27
+ 556:	a6 17       	cp	r26, r22
+ 558:	b7 07       	cpc	r27, r23
+ 55a:	10 f0       	brcs	.+4      	; 0x560 <__udivmodhi4_ep>
+ 55c:	a6 1b       	sub	r26, r22
+ 55e:	b7 0b       	sbc	r27, r23
+
+00000560 <__udivmodhi4_ep>:
+ 560:	88 1f       	adc	r24, r24
+ 562:	99 1f       	adc	r25, r25
+ 564:	5a 95       	dec	r21
+ 566:	a9 f7       	brne	.-22     	; 0x552 <__udivmodhi4_loop>
+ 568:	80 95       	com	r24
+ 56a:	90 95       	com	r25
+ 56c:	bc 01       	movw	r22, r24
+ 56e:	cd 01       	movw	r24, r26
+ 570:	08 95       	ret
+
+00000572 <_exit>:
+ 572:	f8 94       	cli
+
+00000574 <__stop_program>:
+ 574:	ff cf       	rjmp	.-2      	; 0x574 <__stop_program>
